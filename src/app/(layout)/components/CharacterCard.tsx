@@ -35,7 +35,7 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
     const char2 = searchParams.get('char2') || '';
 
     const url = `${pathname}?${createQueryString({ char1, char2, [param]: id })}`;
-    router.push(url);
+    router.push(url, { scroll: false });
   }, [searchParams]);
 
   return (

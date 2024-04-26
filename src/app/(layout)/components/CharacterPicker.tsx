@@ -1,54 +1,76 @@
 import React from 'react';
 
-import { SxProps, Theme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
-import Container from '@/shared/components/Container';
 import { Character } from '@/shared/rickMortyApi';
 
 import CharacterCard from './CharacterCard';
 
-type Props = {
-  sectionTitle: string;
-  param: 'char1' | 'char2';
-  characters: Pick<Character, 'id' | 'name' | 'status' | 'species' | 'image'>[];
-  sx?: SxProps<Theme>;
-};
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
 
-const CharacterPicker: React.FC<Props> = ({ characters, param, sectionTitle, sx }) => (
-  <Container
-    sx={[
-      {},
-      ...Array.isArray(sx) ? sx : [sx],
-    ]}
-  >
-    <Typography
-      variant="h5"
-      component="h2"
-      color="secondary"
+function CustomTabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <Box
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
       sx={{
-        textTransform: 'uppercase',
-        mb: 2,
+        py: 3,
       }}
     >
-      {sectionTitle}
-    </Typography>
-    {
-      characters.length > 0 && characters.map(({ id, name, status, species, image }) => (
-        <CharacterCard
-          key={id}
-          character={{
-            id,
-            name,
-            status,
-            species,
-            image,
-          }}
-          param={param}
-        />
-      ))
-    }
-  </Container>
+      {value === index && (
+        <Box>
+          {children}
+        </Box>
+      )}
+    </Box>
+  );
+}
+
+type Props = {
+  param: 'char1' | 'char2';
+  characters: Pick<Character, 'id' | 'name' | 'status' | 'species' | 'image'>[];
+  value: number;
+};
+
+const CharacterPicker: React.FC<Props> = ({ characters, param, value }) => (
+  <CustomTabPanel
+    index={param === 'char1' ? 0 : 1}
+    value={value}
+  >
+    <Box
+      sx={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'row',
+        gap: 2,
+      }}
+    >
+      {
+        characters.length > 0 && characters.map(({ id, name, status, species, image }) => (
+          <CharacterCard
+            key={id}
+            character={{
+              id,
+              name,
+              status,
+              species,
+              image,
+            }}
+            param={param}
+          />
+        ))
+      }
+    </Box>
+  </CustomTabPanel>
 );
 
 export default CharacterPicker;
