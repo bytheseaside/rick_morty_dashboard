@@ -9,7 +9,7 @@ type Props = {
   sx?: SxProps<Theme>;
 };
 
-const Introduction = ({ sx }: Props) => (
+const Introduction: React.FC = ({ sx }: Props) => (
   <Container
     sx={[
       {
