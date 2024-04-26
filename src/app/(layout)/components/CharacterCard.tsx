@@ -79,14 +79,12 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
             backgroundColor: 'primary.main',
           }}
         >
-          {character.image ? (
-            <Image
-              src={character.image}
-              alt={character.name}
-              fill
-              sizes="60px"
-            />
-          ) : null}
+          <Image
+            src={character.image}
+            alt={character.name}
+            fill
+            sizes="60px"
+          />
         </Box>
         <Box
           sx={{ textTransform: 'capitalize' }}
