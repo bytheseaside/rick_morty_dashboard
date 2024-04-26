@@ -17,6 +17,9 @@ export default function Layout({ children }: PropsWithChildren) {
             height: '100vh',
             backgroundColor: 'background.default',
             color: 'text.primary',
+            display: 'flex',
+            flexDirection: 'column',
+            rowGap: { xxs: 15, md: 20 },
           }}
         >
           {children}
