@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -14,14 +16,30 @@ type Props = {
 const Footer: React.FC<Props> = ({ sx }) => (
   <Container
     sx={[
-      {
+      (theme) => ({
+        [theme.breakpoints.only('xxs')]: {
+          px: 4,
+        },
+        [theme.breakpoints.only('xs')]: {
+          px: 6,
+        },
+        [theme.breakpoints.only('sm')]: {
+          px: 8,
+        },
+        [theme.breakpoints.only('md')]: {
+          px: theme.spacing(28),
+        },
+        [theme.breakpoints.only('lg')]: {
+          px: theme.spacing(32),
+        },
+        width: '100vw',
         display: 'flex',
         gap: 2,
         alignItems: 'center',
         p: 4,
         borderTop: 1,
         borderColor: 'divider',
-      },
+      }),
       ...Array.isArray(sx) ? sx : [sx],
     ]}
   >
