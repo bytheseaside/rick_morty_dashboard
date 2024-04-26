@@ -1,4 +1,4 @@
-import Character, { Response } from './rickMortyApi';
+import { Character, Response } from './rickMortyApi';
 
 type QueryProps = {
   char1?: string;
@@ -25,7 +25,7 @@ export const makeRequest = async (endpoint: string) => {
   return data;
 };
 
-export const getAllCharacters = async (): Promise<Response<Character> > => {
+export const getAllCharacters = async (): Promise<Response<Character>> => {
   const characters = await makeRequest('character');
   return characters;
 };
