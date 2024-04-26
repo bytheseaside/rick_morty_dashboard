@@ -1,4 +1,4 @@
-import { Character, Response } from './rickMortyApi';
+import { Character, Episode, Response } from './rickMortyApi';
 
 type QueryProps = {
   char1?: string;
@@ -41,4 +41,9 @@ export const getAllCharacters = async (): Promise<Response<Character>> => {
 export const getCharacter = async (id: string): Promise<Character> => {
   const character = await makeRequest(`character/${id}`);
   return character;
+};
+
+export const getEpisode = async (id: string): Promise<Episode> => {
+  const episode = await makeRequest(`episode/${id}`);
+  return episode;
 };
