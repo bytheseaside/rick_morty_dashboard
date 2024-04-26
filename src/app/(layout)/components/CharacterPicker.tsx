@@ -53,6 +53,7 @@ const CharacterPicker: React.FC<Props> = ({ characters, param, value }) => (
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'row',
+        justifyContent: 'center',
         gap: 2,
       }}
     >

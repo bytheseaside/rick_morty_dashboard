@@ -34,14 +34,14 @@ const PickerScreen: React.FC<Props> = ({ characters, sx }) => {
   return (
     <Container
       sx={[
-        { width: '100%' },
+        { width: '80%', borderLeft: 1, borderRight: 1, borderColor: 'common.white', px: 1 },
         ...Array.isArray(sx) ? sx : [sx],
       ]}
     >
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="Choose character tabs">
-          <Tab label="Choose character 1" {...a11yProps(0)} />
-          <Tab label="Choose character 2" {...a11yProps(1)} />
+          <Tab label="Character 1" {...a11yProps(0)} />
+          <Tab label="Character 2" {...a11yProps(1)} />
         </Tabs>
         <CharacterPicker
           value={value}

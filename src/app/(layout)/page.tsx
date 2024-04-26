@@ -1,16 +1,27 @@
-import { getAllCharacters } from '@/shared/utils';
+import { getAllCharacters, getCharacter } from '@/shared/utils';
 
+import ListEspisodes from './components/ListEpisodes';
 import Footer from './sections/Footer';
 import Introduction from './sections/Introduction';
 import PickerScreens from './sections/PickerScreens';
 
-export default async function Home() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: {
+    [key: string]: string | string[] | undefined;
+  };
+}) {
   const characters = await getAllCharacters();
+
+  const char1 = searchParams.char1 ? await getCharacter(searchParams.char1 as string) : undefined;
+  const char2 = searchParams.char2 ? await getCharacter(searchParams.char2 as string) : undefined;
 
   return (
     <>
       <Introduction />
       <PickerScreens characters={characters} />
+      <ListEspisodes char1={char1} char2={char2} />
       <Footer />
     </>
   );

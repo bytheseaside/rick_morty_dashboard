@@ -18,8 +18,6 @@ const Footer: React.FC<Props> = ({ sx }) => (
         display: 'flex',
         gap: 2,
         alignItems: 'center',
-        position: 'absolute',
-        bottom: 0,
         p: 4,
         borderTop: 1,
         borderColor: 'divider',

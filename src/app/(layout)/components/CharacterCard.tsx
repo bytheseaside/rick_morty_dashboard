@@ -44,8 +44,9 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
             ((param === 'char1' && char2 === character.id.toString()) || (param === 'char2' && char1 === character.id.toString()))
               ? 'none' : 'block',
           borderRadius: 2,
-          minWidth: 275,
-          maxWidth: 400,
+          minWidth: 200,
+          width: '100%',
+          maxWidth: { xxs: '100%', sm: 275 },
           backgroundColor: 'transparent',
           mx: { xxs: 2 },
           boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
@@ -70,8 +71,8 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
         <Box
           sx={{
             position: 'relative',
-            width: 100,
-            height: 100,
+            width: 60,
+            height: 60,
             borderRadius: '50%',
             mr: 3,
             overflow: 'hidden',
@@ -81,7 +82,7 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
             src={character.image}
             alt={character.name}
             fill
-            sizes="100px"
+            sizes="60px"
           />
         </Box>
         <Box
@@ -89,7 +90,7 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
         >
           <Typography
             component="div"
-            variant="h5"
+            variant="h6"
           >
             {character.name}
           </Typography>
@@ -106,7 +107,7 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
                 width: 15,
                 height: 15,
                 borderRadius: '50%',
-                backgroundColor: character.status === 'alive' ? 'green' : character.status === 'dead' ? 'red' : 'primary.main',
+                backgroundColor: character.status === 'Alive' ? 'green' : character.status === 'Dead' ? 'red' : 'primary.main',
                 ml: 2,
               }}
             />

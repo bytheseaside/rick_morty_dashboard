@@ -1,7 +1,7 @@
 import { Base } from './utils';
 
 type Character = Base & {
-  status: 'alive' | 'dead' | 'unknown';
+  status: 'Alive' | 'Dead' | 'unknown';
   species: string;
   type: string;
   gender: 'female' | 'male' | 'genderless' | 'unknown';

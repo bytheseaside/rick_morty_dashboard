@@ -16,6 +16,7 @@ export default function Layout({ children }: PropsWithChildren) {
           p: 0,
           width: '100vw',
           minHeight: '100vh',
+          height: '100%',
           backgroundColor: 'background.default',
           color: 'text.primary',
           display: 'flex',
