@@ -1,8 +1,8 @@
 import { getAllCharacters, getCharacter } from '@/shared/utils';
 
-import ListEspisodes from './sections/ListEpisodes';
 import Footer from './sections/Footer';
 import Introduction from './sections/Introduction';
+import ListEspisodes from './sections/ListEpisodes';
 import PickerScreens from './sections/PickerScreens';
 
 export default async function Page({

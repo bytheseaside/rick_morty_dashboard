@@ -34,7 +34,7 @@ const PickerScreen: React.FC<Props> = ({ characters, sx }) => {
   return (
     <Container
       sx={[
-        { width: '80%', },
+        { width: '80%' },
         ...Array.isArray(sx) ? sx : [sx],
       ]}
     >
