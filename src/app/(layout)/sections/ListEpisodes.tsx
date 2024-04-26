@@ -57,6 +57,7 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
             return (
               <Box
                 component="li"
+                key={`${episodeInfo.name}onlyChar1`}
                 sx={{
                   listStyleType: 'none',
                   typography: 'body2',
@@ -113,6 +114,7 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
               return (
                 <Box
                   component="li"
+                  key={`${episodeInfo.name}bothChars`}
                   sx={{
                     listStyleType: 'none',
                     typography: 'body2',
@@ -165,6 +167,7 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
             return (
               <Box
                 component="li"
+                key={`${episodeInfo.name}onlyChar2`}
                 sx={{
                   listStyleType: 'none',
                   typography: 'body2',

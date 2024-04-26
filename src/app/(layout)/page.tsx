@@ -1,6 +1,6 @@
 import { getAllCharacters, getCharacter } from '@/shared/utils';
 
-import ListEspisodes from './components/ListEpisodes';
+import ListEspisodes from './sections/ListEpisodes';
 import Footer from './sections/Footer';
 import Introduction from './sections/Introduction';
 import PickerScreens from './sections/PickerScreens';
