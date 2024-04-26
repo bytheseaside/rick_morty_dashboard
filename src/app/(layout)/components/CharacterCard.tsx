@@ -90,11 +90,11 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
         >
           <Typography
             component="div"
-            variant="h6"
+            variant="body1"
           >
             {character.name}
           </Typography>
-          <Typography sx={{ mb: 1 }}>
+          <Typography variant="subtitle1" sx={{ mb: 1 }}>
             Species:
             {' '}
             {character.species}
@@ -112,7 +112,7 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
               }}
             />
             <Typography
-              variant="body2"
+              variant="subtitle2"
             >
               Status:
               {' '}

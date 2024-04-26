@@ -36,7 +36,7 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
           color: 'secondary.contrastText',
         }}
       >
-        <Typography sx={{ mb: 3 }}>
+        <Typography variant="overline" sx={{ mb: 3 }}>
           Episodes for
           {' '}
           {char1.name}
@@ -52,7 +52,7 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
           color: 'secondary.contrastText',
         }}
       >
-        <Typography sx={{ mb: 3 }}>
+        <Typography variant="overline" sx={{ mb: 3 }}>
 
           Episodes for
           {' '}
@@ -71,7 +71,7 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
           color: 'secondary.contrastText',
         }}
       >
-        <Typography sx={{ mb: 3 }}>
+        <Typography variant="overline" sx={{ mb: 3 }}>
           Episodes for
           {' '}
           {char2.name}
