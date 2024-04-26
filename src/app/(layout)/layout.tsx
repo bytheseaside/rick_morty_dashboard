@@ -15,12 +15,13 @@ export default function Layout({ children }: PropsWithChildren) {
           m: 0,
           p: 0,
           width: '100vw',
-          height: '100vh',
+          minHeight: '100vh',
           backgroundColor: 'background.default',
           color: 'text.primary',
           display: 'flex',
           flexDirection: 'column',
           rowGap: { xxs: 15, md: 20 },
+          py: 10,
         }}
       >
         {children}
