@@ -25,15 +25,13 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const char1 = searchParams.get('char1') || '';
+  const char2 = searchParams.get('char2') || '';
 
   const onPick = useCallback((id: string) => {
     if (searchParams.get(param) === id) {
       return;
     }
-
-    const char1 = searchParams.get('char1') || '';
-    const char2 = searchParams.get('char2') || '';
-
     const url = `${pathname}?${createQueryString({ char1, char2, [param]: id })}`;
     router.push(url, { scroll: false });
   }, [searchParams]);
@@ -42,6 +40,9 @@ const CharacterCard: React.FC<Props> = ({ character, param, sx }) => {
     <Card
       sx={[
         {
+          display:
+            ((param === 'char1' && char2 === character.id.toString()) || (param === 'char2' && char1 === character.id.toString()))
+              ? 'none' : 'block',
           borderRadius: 2,
           minWidth: 275,
           maxWidth: 400,

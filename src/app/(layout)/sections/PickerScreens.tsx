@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 
 import Box from '@mui/material/Box';
@@ -6,6 +8,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 
 import Container from '@/shared/components/Container';
+import { Character, Response } from '@/shared/rickMortyApi';
 
 import CharacterPicker from '../components/CharacterPicker';
 
@@ -17,10 +20,11 @@ function a11yProps(index: number) {
 }
 
 type Props = {
+  characters: Response<Character>;
   sx?: SxProps<Theme>;
 };
 
-const PickerScreen: React.FC<Props> = ({ sx }) => {
+const PickerScreen: React.FC<Props> = ({ characters, sx }) => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -39,53 +43,17 @@ const PickerScreen: React.FC<Props> = ({ sx }) => {
           <Tab label="Choose character 1" {...a11yProps(0)} />
           <Tab label="Choose character 2" {...a11yProps(1)} />
         </Tabs>
+        <CharacterPicker
+          value={value}
+          characters={characters.results}
+          param="char1"
+        />
+        <CharacterPicker
+          value={value}
+          characters={characters.results}
+          param="char2"
+        />
       </Box>
-      <CharacterPicker
-        value={value}
-        characters={
-          [
-            {
-              id: 1,
-              name: 'Rick Sanchez',
-              status: 'dead',
-              species: 'Human',
-              image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-            },
-            {
-              id: 2,
-              name: 'Morty Smith',
-              status: 'alive',
-              species: 'Human',
-              image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-            },
-          ]
-        }
-        sectionTitle="Character 1"
-        param="char1"
-      />
-      <CharacterPicker
-        value={value}
-        characters={
-          [
-            {
-              id: 1,
-              name: 'Rick Sanchez',
-              status: 'dead',
-              species: 'Human',
-              image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-            },
-            {
-              id: 2,
-              name: 'Morty Smith',
-              status: 'alive',
-              species: 'Human',
-              image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-            },
-          ]
-        }
-        sectionTitle="Character 2"
-        param="char2"
-      />
     </Container>
   );
 };

@@ -24,6 +24,8 @@ function CustomTabPanel(props: TabPanelProps) {
       {...other}
       sx={{
         py: 3,
+        maxHeight: '65vh',
+        overflow: 'scroll',
       }}
     >
       {value === index && (
