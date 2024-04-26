@@ -52,6 +52,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'object-curly-newline': 'off',
     'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
     'react/prop-types': 'off',
     'implicit-arrow-linebreak': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
