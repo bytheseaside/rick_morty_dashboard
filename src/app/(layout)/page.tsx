@@ -9,13 +9,15 @@ export default async function Page({
   searchParams,
 }: {
   searchParams: {
-    [key: string]: string | string[] | undefined;
+    [key: string]: string | undefined;
   };
 }) {
   const characters = await getAllCharacters();
 
-  const char1 = searchParams.char1 ? await getCharacter(searchParams.char1 as string) : undefined;
-  const char2 = searchParams.char2 ? await getCharacter(searchParams.char2 as string) : undefined;
+  const char1 = searchParams.char1 !== undefined
+    ? await getCharacter(searchParams.char1 as string) : undefined;
+  const char2 = searchParams.char2 !== undefined
+    ? await getCharacter(searchParams.char2 as string) : undefined;
 
   return (
     <>
