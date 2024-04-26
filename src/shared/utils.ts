@@ -28,7 +28,10 @@ export const makeRequest = async (endpoint: string) => {
 export const getAllCharacters = async (): Promise<Response<Character>> => {
   const characters = await makeRequest('character');
   while (characters.info.next) {
-    const nextCharacters = await makeRequest(characters.info.next.split(process.env.NEXT_PUBLIC_API_URL)[1]);
+    // eslint-disable-next-line no-await-in-loop
+    const nextCharacters = await makeRequest(
+      characters.info.next.split(process.env.NEXT_PUBLIC_API_URL)[1],
+    );
     characters.results.push(...nextCharacters.results);
     characters.info = nextCharacters.info;
   }
