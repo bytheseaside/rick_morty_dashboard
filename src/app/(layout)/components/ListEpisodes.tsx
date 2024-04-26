@@ -39,7 +39,7 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
           overflowY: 'scroll',
         }}
       >
-        <Typography variant="overline" sx={{ mb: 3, px: 2, px: 2 }}>
+        <Typography variant="overline" sx={{ mb: 3, px: 2 }}>
           Episodes for
           {' '}
           <strong>
@@ -70,6 +70,10 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
                 }}
               >
                 {episodeInfo.name}
+                {' '}
+                -
+                {' '}
+                {episodeInfo.episode}
               </Box>
             );
           })}
@@ -122,6 +126,10 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
                   }}
                 >
                   {episodeInfo.name}
+                  {' '}
+                  -
+                  {' '}
+                  {episodeInfo.episode}
                 </Box>
               );
             }
@@ -167,9 +175,14 @@ const ListEspisodes: React.FC<Props> = async ({ char1, char2, sx }) => {
                     width: 1,
                     pr: 1,
                   },
+
                 }}
               >
                 {episodeInfo.name}
+                {' '}
+                -
+                {' '}
+                {episodeInfo.episode}
               </Box>
             );
           })}
