@@ -1,4 +1,5 @@
 import { ThemeOptions } from '@mui/material/styles';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import createSpacing from '@mui/system/createTheme/createSpacing';
 
 const BASE: ThemeOptions = {

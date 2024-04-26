@@ -1,4 +1,4 @@
-import { Base } from './utils'; 
+import { Base } from './utils';
 
 type Episode = Base & {
   air_date: string;

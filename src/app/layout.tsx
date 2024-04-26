@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Rick and Morty API",
-  description: "Find information about your favorite characters and episodes from the Rick and Morty TV show.",
+  title: 'Rick and Morty API',
+  description: 'Find information about your favorite characters and episodes from the Rick and Morty TV show.',
 };
 
 export default function RootLayout({

@@ -1,7 +1,6 @@
 export type Base = {
-  id: number
-  name: string
-  url: string
-  created: string
+  id: number;
+  name: string;
+  url: string;
+  created: string;
 };
-

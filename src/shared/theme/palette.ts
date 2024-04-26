@@ -1,6 +1,5 @@
-import { teal, deepPurple } from '@mui/material/colors';
+import { deepPurple, teal } from '@mui/material/colors';
 import { light } from '@mui/material/styles/createPalette';
-
 
 const PALETTE = {
   palette: {

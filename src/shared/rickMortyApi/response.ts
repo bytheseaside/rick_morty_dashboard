@@ -6,6 +6,6 @@ type Response<T ='unknown'> = {
     prev: string | null;
   };
   results: T[];
-}; 
+};
 
 export default Response;

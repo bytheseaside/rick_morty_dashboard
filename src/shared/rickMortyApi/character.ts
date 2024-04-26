@@ -1,4 +1,3 @@
-
 import { Base } from './utils';
 
 type Character = Base & {
