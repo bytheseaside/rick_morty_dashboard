@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getAllCharacters, getCharacter } from '@/shared/utils';
 
 import Footer from './sections/Footer';
@@ -9,7 +10,8 @@ export default async function Page({
   searchParams,
 }: {
   searchParams: {
-    [key: string]: string | undefined;
+    char1?: any;
+    char2?: any;
   };
 }) {
   const characters = await getAllCharacters();
