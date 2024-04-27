@@ -18,7 +18,8 @@ export const createQueryString = ({ char1, char2 }: QueryProps): string => {
   return params.toString();
 };
 
-export const makeRequest = async (endpoint: string) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const makeRequest = async (endpoint: string): Promise<any> => {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`);
   const data = await response.json();
 
