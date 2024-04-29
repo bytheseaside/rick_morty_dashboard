@@ -10,22 +10,24 @@ export default async function Page({
   searchParams,
 }: {
   searchParams: {
-    char1?: any;
-    char2?: any;
+    char1?: string;
+    char2?: string;
   };
 }) {
   const characters = await getAllCharacters();
 
-  const char1 = searchParams.char1 !== undefined
-    ? await getCharacter(searchParams.char1 as string) : undefined;
-  const char2 = searchParams.char2 !== undefined
-    ? await getCharacter(searchParams.char2 as string) : undefined;
+  let char1;
+  let char2;
 
+  if (searchParams.char1 !== undefined && searchParams.char2 !== undefined) {
+    char1 = await getCharacter(searchParams.char1 as string);
+    char2 = await getCharacter(searchParams.char2 as string);
+  }
   return (
     <>
       <Introduction />
       <PickerScreens characters={characters} />
-      <ListEspisodes char1={char1} char2={char2} />
+      {char1 && char2 && <ListEspisodes char1={char1} char2={char2} />}
       <Footer />
     </>
   );
