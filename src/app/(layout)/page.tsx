@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // import { Suspense } from 'react';
 
-import { getAllCharacters, getCharacter } from '@/shared/utils';
+// import { getAllCharacters, getCharacter } from '@/shared/utils';
 
 import Footer from './sections/Footer';
 import Introduction from './sections/Introduction';
