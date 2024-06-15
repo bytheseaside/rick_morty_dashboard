@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { Suspense } from 'react';
+
 import { getAllCharacters, getCharacter } from '@/shared/utils';
 
 import Footer from './sections/Footer';
@@ -26,8 +27,10 @@ export default async function Page({
   return (
     <>
       <Introduction />
-      <PickerScreens characters={characters} />
-      {char1 && char2 && <ListEspisodes char1={char1} char2={char2} />}
+      <Suspense fallback={null}>
+        <PickerScreens characters={characters} />
+        {char1 && char2 && <ListEspisodes char1={char1} char2={char2} />}
+      </Suspense>
       <Footer />
     </>
   );
