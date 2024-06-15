@@ -9,14 +9,12 @@ type Props = {
   sx?: SxProps<Theme>;
   component?: React.ElementType;
   children?: React.ReactNode;
-  className?: string;
 };
 
 const Container = forwardRef<HTMLElement, PropsWithChildren<Props>>(
-  ({ sx, className, children, component: Component = 'section', ...props }, ref) => (
+  ({ sx, children, component: Component = 'section', ...props }, ref) => (
     <Box
       component={Component}
-      className={className}
       sx={[
         (theme) => ({
           width: '100%',
